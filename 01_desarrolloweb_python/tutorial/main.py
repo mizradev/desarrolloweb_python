@@ -5,6 +5,16 @@ from flask import render_template, request
 # Inicializa Flask
 app = Flask(__name__)
 
+#hooks o callbacks en flask en peticiones al server
+@app.before_request # antes del request
+def before_request():
+    print('Antes del request')
+
+@app.after_request # despues del request
+def after_request(response):# response obligatorio es lo que devuelve las rutas descritas
+    print('Despues del request')
+    return response
+
 # ruta del index
 @app.route('/')
 def index():
