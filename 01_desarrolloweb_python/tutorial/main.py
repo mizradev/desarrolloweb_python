@@ -9,7 +9,9 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     #return "<h1>Hola mundo desde el server de Flask</h1>"
-    return render_template('index.html')# carga el html del templates/
+    name = 'Jorge Mizrain Aguilar'
+    course = 'Python Web'
+    return render_template('index.html', username=name, course_name=course)# carga el html del templates/
 
 # servidor flask corriendo en el puerto 9000 y modo debugin
 if __name__ == '__main__':
