@@ -14,7 +14,7 @@ escribir el siguiente comando:
 
 `$ pip3 install -r requirements.txt`
 
-Es importante estar ubicado en el directorio **01_desarrolloweb_python/** para aplicar este comando
+Es importante estar ubicado en el directorio **01_desarrolloweb_python/** o en el directorio del módulo del curso donde este ubicado el entorno virtual para aplicar este comando.
 
 ## Puesta en marcha del proyecto
 Una vez ubicado en el directorio donde se encuentra el entorno virtual instalado, luego 
