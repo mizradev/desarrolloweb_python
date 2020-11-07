@@ -18,6 +18,12 @@ def index():
     									is_premium=is_premium,
     									courses=courses)# carga el html del templates/
 
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+
 # ruta con parametros
 #@app.route('/usuario/<username>')
 #@app.route('/usuario/<last_name>/<name>')
