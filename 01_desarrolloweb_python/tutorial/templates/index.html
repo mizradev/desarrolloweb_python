@@ -9,5 +9,33 @@
 	<h2>Hola {{ username }}</h2>
 	<p>Esto es parte del curso de <strong>{{ course_name }}</strong> en codigoFacilito</p>
 	<p>Pagina html desde la carpeta de template del proyecto de Flask</p>
+
+	{% if is_premium %}
+
+	<p>
+		El curso es PREMIUN
+	</p>
+	{% else %}
+
+	<p>El curso es gratuito para todo el mundo</p>
+
+	{% endif %}
+	
+	<hr>
+
+	<h3>Ejemplo de Ciclo for con jinja2</h3>
+
+	<p>Listado de cursos:</p>
+
+	{% if courses %}
+
+	<ul>
+		{% for course in courses %}
+		<li> {{ course }} </li>
+		{% endfor %}
+	</ul>
+
+	{% endif %}
+
 </body>
 </html>
