@@ -6,12 +6,18 @@ Codigo fuente del Curso Profesional de Desarrollo Web con Python de CodigoFacili
 
 Debemos de crear un virtualenv:
 
-`python3 -m venv nombre_del_virtualenv`
+`$ python3 -m venv nombre_del_virtualenv`
 
 ## Instalamos las dependencias del proyecto
-Estan descritas en el archivo *requirements.txt*, para realizar la instalcion debemos de 
+Estan descritas en el archivo **requirements.txt**, para realizar la instalcion debemos de 
 escribir el siguiente comando:
 
-`pip3 install -r requirements.txt`
+`$ pip3 install -r requirements.txt`
 
-Es importante estar ubicado en el directorio *01_desarrolloweb_python/* para aplicar este comando
+Es importante estar ubicado en el directorio **01_desarrolloweb_python/** para aplicar este comando
+
+## Puesta en marcha del proyecto
+Una vez ubicado en el directorio donde se encuentra el entorno virtual instalado, luego 
+ingresar a la carpeta del proyecto a inicializar y verificamos que exista el archivo `main.py` , ejecutamos el siguiente comando:
+
+`$ python3 main.py`
