@@ -42,5 +42,6 @@ MANIFEST
 *.manifest
 *.spec
 
-# module 1 - Introduccion y Fundamentos
+# Curso 1 - desarrollo web con python
 01_desarrolloweb_python/venv
+01_desarrolloweb_python/proyecto/env
