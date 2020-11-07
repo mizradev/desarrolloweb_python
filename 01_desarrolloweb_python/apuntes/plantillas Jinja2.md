@@ -17,38 +17,36 @@ Ejemplos de lo que podemos hacer en nuestros templates.
 
 Si nosotros así lo deseamos podemos enviar objetos a nuestro templates.
 
-`
-<h2>Hola {{ username }} </h2>
+`<h2>Hola {{ username }} </h2>
 <p>
     Te encuentras en el curso {{ course.title }}
-</p>
-`
+</p>`
+
+
 ### Uso de condicionales
 
-`
-{% if user_is_admin %}
+`{% if user_is_admin %}
     <a href="{{ url_for('admin') }}">admin</a>
 {% else %}
     <p>No cuentas con los permisos suficientes</p>
-{% endif %}
-`
+{% endif %}`
 
-`
-{% if user_is_admin and user.permission_level == 5 %}
+
+`{% if user_is_admin and user.permission_level == 5 %}
     <a href="{{ url_for('admin') }}">admin</a>
-{% endif %}
-`
+{% endif %}`
+
+
 ### Uso de Ciclos
 
 El único ciclo permitido por el motor Jinja2 es el ciclo for.
 
-`
-<ul>
+`<ul>
     {% for val in [1,2,3,4,5,6,7,8,9] %}
         <li> {{ val }} </li>
     {% endfor %}
-</ul>
-`
+</ul>`
+
 Dentro del ciclo podemos acceder a diferentes atributos del objeto loop.
 
 
@@ -63,33 +61,27 @@ Dentro del ciclo podemos acceder a diferentes atributos del objeto loop.
 - length: Número de iteraciones.
 
 Ejemplo:
-`
-<ul>
+
+`<ul>
     {% for val in [1,2,3,4,5,6,7,8,9] %}
         <li> {{ loop.index0 }} - {{ val }} </li>
     {% endfor %}
-</ul>  
-`
+</ul>`
 
 ### Funciones
 
 Aunque la integración de Flask y Jinja2 nos permite ejecutar ciertas funciones y métodos dentro de nuestro template, habrá ocasiones en las que necesitemos utilizar funciones propias, en esos casos lo que podemos hacer es enviar las funciones al template a través de la función render template.
 
-`
-def suma(val1, val2):
+`def suma(val1, val2):
     return val1 + val2
 
-
 def suma_template():
-    return render_template('suma.html', val1=10, val2=30, funcion=suma)
-`
+    return render_template('suma.html', val1=10, val2=30, funcion=suma)`
 
 
-`
-<p>
+`<p>
 La suma de {{ val1 }} + {{ val2 }} es : {{ funcion(val1, val2) }}
-</p>
-`
+</p>`
 
 
 
