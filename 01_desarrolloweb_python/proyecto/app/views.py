@@ -15,7 +15,7 @@ def login():
     #obtenemos los datos del login al hacer submit
     form = LoginForm(request.form)
     #Validamos la request por el metodo POST
-    if request.method == 'POST':
+    if request.method == 'POST' and form.validate():
         # se muestra en consola la informacion del login
         print(form.username.data)
         print(form.password.data)
