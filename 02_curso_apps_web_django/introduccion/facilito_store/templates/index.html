@@ -10,6 +10,28 @@
 	<div class="container">
 		<h2>Hola mundo desde index.html</h2>
 		<p>{{ message }}</p>
+		<div class="row">
+			<div class="col-md-12">
+				<h3>Productos</h3>
+				<ul class="list-group">
+				{% for product in products %}
+
+					<li class="list-group-item">
+						{{product.title}}
+						
+							{% if product.stock  %}
+								<span class="text-success">- Disponible</span>
+
+							{% else %}
+								<span class="text-danger">- No Disponible</span>
+							{% endif %}
+						
+					</li>
+				
+				{% endfor %}
+				</ul>
+			</div>
+		</div>
 	</div>
 
 	<!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
