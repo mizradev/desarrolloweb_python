@@ -5,4 +5,6 @@ def index(request):
 	#return HttpResponse('Hola desde views.py')
 	return render(request,'index.html',{
 		#context
+		'message':'Mensaje desde la vista',
+		'title': 'Index'
 	})
