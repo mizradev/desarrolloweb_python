@@ -70,8 +70,9 @@ def signup_view(request):
 		password = form.cleaned_data.get('password')
 		
 		# registro en la base de datos de usuario
-		user = User.objects.create_user(username, email, password) # el password se guarda encriptado
-		
+		#user = User.objects.create_user(username, email, password) # el password se guarda encriptado
+		user = form.save()
+
 		if user:
 			login(request, user)
 			messages.success(request, 'Usuario creado exitosamente')
