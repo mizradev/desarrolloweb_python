@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 
-from django.contrib.auth import login 
+from django.contrib import messages
+from django.contrib.auth import login, logout
 from django.contrib.auth import authenticate
 
 def index(request):
@@ -40,8 +41,17 @@ def login_view(request):
 
 		if user != None:
 			login(request, user)
+			messages.success(request, 'Bienvenido {}'.format(user.username))
 			return redirect('index')
+		else:
+			print(messages)
+			messages.success(request, 'Usuario o contraseña no válido')
 
 	return render(request,'auth/login.html',{
 		'title':'Login'
 	})
+
+def logout_view(request):
+	logout(request)
+	messages.success(request, 'Sesion cerrada exitosamente!')
+	return redirect('login')
