@@ -35,7 +35,10 @@
 						<input type="password" name="password" class="form-control" placeholder="password">
 					</div>
 					{% csrf_token %}
-					<button type="submit" class="btn btn-success">Login</button>
+					<div class="form-group d-flex flex-column justify-content-center align-items-center">
+						<button type="submit" class="btn btn-success btn-block">Login</button>
+						<small>¿No tienes cuenta? <a href="/auth/signup">Registrate</a></small>
+					</div>
 				</form>
 			</div>
 		</div>

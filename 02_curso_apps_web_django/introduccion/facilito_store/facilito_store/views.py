@@ -5,6 +5,8 @@ from django.contrib import messages
 from django.contrib.auth import login, logout
 from django.contrib.auth import authenticate
 
+from django.contrib.auth.models import User
+
 from forms import RegisterForm
 
 def index(request):
@@ -59,13 +61,21 @@ def logout_view(request):
 	return redirect('login')
 
 def signup_view(request):
-	form = RegisterForm()
+	form = RegisterForm(request.POST or None)
 
 	# lectura de datos del formulario
-	if request.method == 'POST' and forms.is_valid():
+	if request.method == 'POST' and form.is_valid():
 		username = form.cleaned_data.get('username')
 		email = form.cleaned_data.get('email')
 		password = form.cleaned_data.get('password')
+		
+		# registro en la base de datos de usuario
+		user = User.objects.create_user(username, email, password) # el password se guarda encriptado
+		
+		if user:
+			login(request, user)
+			messages.success(request, 'Usuario creado exitosamente')
+			return redirect('index')
 
 	return render(request, 'auth/register.html',{
 		'form':form

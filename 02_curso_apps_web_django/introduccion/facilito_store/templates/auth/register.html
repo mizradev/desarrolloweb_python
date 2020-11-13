@@ -25,18 +25,22 @@
 			<div class="col-sm-4 col-md-6 p-3 bg-white formLogin">
 				<h2 class="text-center">Signup</h2>
 				<h6 class="text-center">facilitoStore</h6>
-				<form method="POST">
-					
+				<form method="post">
+					{% csrf_token %}
 					{% for field in form %}
 						<div class="form-group">
 							{{ field.label_tag }}
 							{{ field }}
+
+							{% if field.errors %}
+								{{ field.errors }}
+							{% endif %}
+
 					    </div>	
 					{% endfor %}
-					
-					{% csrf_token %}
-					<div class="form-group d-flex justify-content-end">
-						<button type="submit" class="btn btn-success">Signup</button>
+					<div class="form-group d-flex flex-column justify-content-end align-items-center">
+						<button type="submit" class="btn btn-success btn-block">Signup</button>
+						<small>¿Ya tienes cuenta? <a href="/auth/login">Inicia Sesion</a></small>
 					</div>
 				</form>
 			</div>
