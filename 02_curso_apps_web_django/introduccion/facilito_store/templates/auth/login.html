@@ -1,0 +1,33 @@
+{% load static %} {# carga los archivos staticos #}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{{ title }} - FacilitoStore</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+<body>
+	<div class="container">
+		<div class="row d-flex justify-content-center align-items-center" style="height: 100vh">
+			<div class="col-4 p-3 bg-white formLogin">
+				<h2 class="text-center">Login</h2>
+				<h6 class="text-center">facilitoStore</h6>
+				<form method="POST">
+					<div class="form-group">
+						<label for="username">Username</label>
+						<input type="text" name="username" class="form-control" placeholder="username">
+					</div>
+					<div class="form-group">
+						<label for="password">Password</label>
+						<input type="password" name="password" class="form-control" placeholder="password">
+					</div>
+					{% csrf_token %}
+					<button type="submit" class="btn btn-success">Login</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -25,3 +25,14 @@ def index(request):
 			},
 		] 
 	})
+
+
+def login(request):
+	
+	if request.method == 'POST':
+		username = request.POST.get('username') #diccionario
+		password = request.POST.get('password') #diccionario
+	
+	return render(request,'auth/login.html',{
+		'title':'Login'
+	})

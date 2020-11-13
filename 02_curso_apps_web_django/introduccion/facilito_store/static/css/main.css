@@ -1,0 +1,17 @@
+:root {
+	--azulDark: #00296B;
+	--azulOscuro: #003F88;
+	--azulClaro: #00509D;
+	--amarilloDark: #FDC500;
+	--amarilloClaro: #FFD500;
+}
+
+body{
+	background-color: var(--azulDark);
+
+}
+
+.formLogin{
+	border-radius: 10px;
+	box-shadow: 5px 5px 1px rgba(0,0,0,.5); 
+}
