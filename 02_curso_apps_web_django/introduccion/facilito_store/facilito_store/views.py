@@ -60,6 +60,13 @@ def logout_view(request):
 
 def signup_view(request):
 	form = RegisterForm()
+
+	# lectura de datos del formulario
+	if request.method == 'POST' and forms.is_valid():
+		username = form.cleaned_data.get('username')
+		email = form.cleaned_data.get('email')
+		password = form.cleaned_data.get('password')
+
 	return render(request, 'auth/register.html',{
 		'form':form
 	})
