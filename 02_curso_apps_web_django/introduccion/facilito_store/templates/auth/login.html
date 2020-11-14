@@ -17,7 +17,7 @@
 				{% csrf_token %}
 				<div class="form-group d-flex flex-column justify-content-center align-items-center">
 					<button type="submit" class="btn btn-success btn-block">Login</button>
-					<small>¿No tienes cuenta? <a href="/auth/signup">Registrate</a></small>
+					<small>¿No tienes cuenta? <a href="{% url 'signup' %}">Registrate</a></small>
 				</div>
 			</form>
 		</div>

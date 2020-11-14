@@ -1,0 +1,29 @@
+{% url 'login' as login %}
+{% url 'signup' as signup %}
+
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+	<a href="{% url 'index' %}" class="navbar-brand"> Facilito Store</a>
+	<button class="navbar-toggler navbar-toggler-right" data-toggle="collapse" data-target="#navb">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+
+	<div id="navb" class="navbar-collapse collapse hide">
+		 <ul class="nav navbar-nav ml-auto">
+		 	<li class="navbar-item {% if request.path == login %}active{% endif %}">
+		 		<a href="{% url 'login' %}" class="nav-link">
+		 			<span class="fa fa-sign-in-alt"></span>
+		 		Login</a>
+		 	</li>
+		 	<li class="navbar-item {% if request.path == signup %}active{% endif %}">
+		 		<a href="{% url 'signup' %}" class="nav-link">
+		 			<span class="fa fa-user-circle"></span>
+		 		Registro</a>
+		 	</li>
+		 	<li class="navbar-item">
+		 		<a href="{% url 'logout' %}" class="nav-link">
+		 			<span class="fa fa-sign-out-alt"></span>
+		 		Logout</a>
+		 	</li>
+		 </ul>
+	</div>
+</nav>
