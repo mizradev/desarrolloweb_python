@@ -10,6 +10,10 @@ from django.contrib.auth.models import User
 from forms import RegisterForm
 
 def index(request):
+
+	if not request.user.is_authenticated:
+		return redirect('login')
+
 	#return HttpResponse('Hola desde views.py')
 	return render(request,'index.html',{
 		#context
@@ -36,6 +40,9 @@ def index(request):
 
 
 def login_view(request):
+
+	if request.user.is_authenticated:
+		return redirect('index')
 	
 	if request.method == 'POST':
 		username = request.POST.get('username') #diccionario
@@ -61,6 +68,10 @@ def logout_view(request):
 	return redirect('login')
 
 def signup_view(request):
+
+	if request.user.is_authenticated:
+		return redirect('index')
+
 	form = RegisterForm(request.POST or None)
 
 	# lectura de datos del formulario
