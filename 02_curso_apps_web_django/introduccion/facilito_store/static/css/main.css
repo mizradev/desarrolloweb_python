@@ -7,10 +7,13 @@
 }
 
 body{
-	background-color: var(--azulDark);
+	
 
 }
 
+.content-auth{
+	background-color: var(--azulDark);
+}
 .formLogin{
 	border-radius: 10px;
 	box-shadow: 5px 5px 1px rgba(0,0,0,.5); 
